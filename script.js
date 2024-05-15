@@ -29,17 +29,19 @@ function calculateSupplies() {
     const frequency = parseFloat(iv1Frequency);
     if (frequency === 0.5) {
       totalIVTubing += Math.ceil(numDays / 2);
+      totalSalineFlushes += Math.ceil(numDays / 2) * 20;
+      totalRedBlueCaps += Math.ceil(numDays / 2);
       if (heparinOrdered) {
         totalHeparin += Math.ceil(numDays / 2) * 5;
       }
     } else {
       totalIVTubing += numDays;
+      totalSalineFlushes += Math.ceil(frequency * 20 * numDays);
+      totalRedBlueCaps += Math.ceil(frequency * numDays);
       if (heparinOrdered) {
         totalHeparin += Math.ceil(frequency * 5 * numDays);
       }
     }
-    totalSalineFlushes += Math.ceil(frequency * 20 * numDays);
-    totalRedBlueCaps += Math.ceil(frequency * numDays);
   }
   
   // Calculate supplies for IV 2
@@ -47,17 +49,19 @@ function calculateSupplies() {
     const frequency = parseFloat(iv2Frequency);
     if (frequency === 0.5) {
       totalIVTubing += Math.ceil(numDays / 2);
+      totalSalineFlushes += Math.ceil(numDays / 2) * 20;
+      totalRedBlueCaps += Math.ceil(numDays / 2);
       if (heparinOrdered) {
         totalHeparin += Math.ceil(numDays / 2) * 5;
       }
     } else {
       totalIVTubing += numDays;
+      totalSalineFlushes += Math.ceil(frequency * 20 * numDays);
+      totalRedBlueCaps += Math.ceil(frequency * numDays);
       if (heparinOrdered) {
         totalHeparin += Math.ceil(frequency * 5 * numDays);
       }
     }
-    totalSalineFlushes += Math.ceil(frequency * 20 * numDays);
-    totalRedBlueCaps += Math.ceil(frequency * numDays);
   }
   
   // Calculate supplies for IV 3
@@ -65,17 +69,19 @@ function calculateSupplies() {
     const frequency = parseFloat(iv3Frequency);
     if (frequency === 0.5) {
       totalIVTubing += Math.ceil(numDays / 2);
+      totalSalineFlushes += Math.ceil(numDays / 2) * 20;
+      totalRedBlueCaps += Math.ceil(numDays / 2);
       if (heparinOrdered) {
         totalHeparin += Math.ceil(numDays / 2) * 5;
       }
     } else {
       totalIVTubing += numDays;
+      totalSalineFlushes += Math.ceil(frequency * 20 * numDays);
+      totalRedBlueCaps += Math.ceil(frequency * numDays);
       if (heparinOrdered) {
         totalHeparin += Math.ceil(frequency * 5 * numDays);
       }
     }
-    totalSalineFlushes += Math.ceil(frequency * 20 * numDays);
-    totalRedBlueCaps += Math.ceil(frequency * numDays);
   }
   
   const ivDressingChangeKits = Math.ceil(numDays / 7);
