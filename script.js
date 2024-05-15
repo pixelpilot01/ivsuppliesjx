@@ -23,64 +23,73 @@ function calculateSupplies() {
   let totalSalineFlushes = 0;
   let totalHeparin = 0;
   let totalRedBlueCaps = 0;
-
+  
   // Calculate supplies for IV 1
   if (iv1Frequency !== '') {
     const frequency = parseFloat(iv1Frequency);
     if (frequency === 0.5) {
       totalIVTubing += Math.ceil(numDays / 2);
+      if (heparinOrdered) {
+        totalHeparin += Math.ceil(numDays / 2) * 5;
+      }
     } else {
       totalIVTubing += numDays;
+      if (heparinOrdered) {
+        totalHeparin += Math.ceil(frequency * 5 * numDays);
+      }
     }
     totalSalineFlushes += Math.ceil(frequency * 20 * numDays);
     totalRedBlueCaps += Math.ceil(frequency * numDays);
-    if (heparinOrdered) {
-      totalHeparin += Math.ceil(frequency * 5 * numDays);
-    }
   }
-
+  
   // Calculate supplies for IV 2
   if (iv2Frequency !== '') {
     const frequency = parseFloat(iv2Frequency);
     if (frequency === 0.5) {
       totalIVTubing += Math.ceil(numDays / 2);
+      if (heparinOrdered) {
+        totalHeparin += Math.ceil(numDays / 2) * 5;
+      }
     } else {
       totalIVTubing += numDays;
+      if (heparinOrdered) {
+        totalHeparin += Math.ceil(frequency * 5 * numDays);
+      }
     }
     totalSalineFlushes += Math.ceil(frequency * 20 * numDays);
     totalRedBlueCaps += Math.ceil(frequency * numDays);
-    if (heparinOrdered) {
-      totalHeparin += Math.ceil(frequency * 5 * numDays);
-    }
   }
-
+  
   // Calculate supplies for IV 3
   if (iv3Frequency !== '') {
     const frequency = parseFloat(iv3Frequency);
     if (frequency === 0.5) {
       totalIVTubing += Math.ceil(numDays / 2);
+      if (heparinOrdered) {
+        totalHeparin += Math.ceil(numDays / 2) * 5;
+      }
     } else {
       totalIVTubing += numDays;
+      if (heparinOrdered) {
+        totalHeparin += Math.ceil(frequency * 5 * numDays);
+      }
     }
     totalSalineFlushes += Math.ceil(frequency * 20 * numDays);
     totalRedBlueCaps += Math.ceil(frequency * numDays);
-    if (heparinOrdered) {
-      totalHeparin += Math.ceil(frequency * 5 * numDays);
-    }
   }
-
+  
   const ivDressingChangeKits = Math.ceil(numDays / 7);
 
-  // Display the results
-  const resultContainer = document.getElementById('result');
-  resultContainer.innerHTML = `
-        <h4>Supplies</h4>
-        <p>Total IV Tubing: ${totalIVTubing}</p>
-        <p>Total Saline Flushes (ml): ${totalSalineFlushes}</p>
-        <p>Total IV Dressing Change Kits: ${ivDressingChangeKits}</p>
-        ${heparinOrdered ? `<p>Total Heparin (ml): ${totalHeparin}</p>` : ''}
-        <p>Total Red Caps/Blue Caps: ${totalRedBlueCaps}</p>
-      `;
+// Display the results
+const resultContainer = document.getElementById('result');
+resultContainer.innerHTML = `
+  <h4 class="result-heading">Calculation Results</h4>
+  <p>Total IV Tubing: ${totalIVTubing}</p>
+  <p>Total Saline Flushes (ml): ${totalSalineFlushes}</p>
+  <p>Total IV Dressing Change Kits: ${ivDressingChangeKits}</p>
+  ${heparinOrdered ? `<p>Total Heparin (ml): ${totalHeparin}</p>` : ''}
+  <p>Total Red Caps/Blue Caps: ${totalRedBlueCaps}</p>
+`;
 }
 
 function showErrorMessage(message) {
