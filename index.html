@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IV Supplies Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>IV Supplies Calculator</h1>
+    
+    <div class="iv-container">
+        <h3>IV med 1</h3>
+        <select id="iv1-frequency">
+          <option value="">Please select frequency</option>
+          <option value="1">Daily</option>
+          <option value="2">Twice Daily</option>
+          <option value="3">3 Times Daily</option>
+          <option value="4">4 Times Daily</option>
+          <option value="6">6 Times Daily</option>
+          <option value="0.5">Daily, Every Other Day</option>
+        </select>
+      </div>
+    
+    <div class="iv-container">
+      <h3>IV med 2</h3>
+      <select id="iv2-frequency">
+        <option value="">Please select frequency</option>
+        <option value="1">Daily</option>
+        <option value="2">Twice Daily</option>
+        <option value="3">3 Times Daily</option>
+        <option value="4">4 Times Daily</option>
+        <option value="6">6 Times Daily</option>
+        <option value="0.5">Daily, Every Other Day</option>
+      </select>
+    </div>
+    
+    <div class="iv-container">
+      <h3>IV med 3</h3>
+      <select id="iv3-frequency">
+        <option value="">Please select frequency</option>
+        <option value="1">Daily</option>
+        <option value="2">Twice Daily</option>
+        <option value="3">3 Times Daily</option>
+        <option value="4">4 Times Daily</option>
+        <option value="6">6 Times Daily</option>
+        <option value="0.5">Daily, Every Other Day</option>
+      </select>
+    </div>
+    
+    <div class="input-container">
+      <label for="num-days">Number of Days:</label>
+      <input type="number" id="num-days" min="1" required>
+    </div>
+    
+    <div class="input-container">
+      <label for="heparin-ordered">Heparin Ordered:</label>
+      <input type="checkbox" id="heparin-ordered">
+    </div>
+    
+    <div class="button-container">
+      <button onclick="calculateSupplies()">Calculate Supplies</button>
+      <button onclick="clearFields()">Clear</button>
+    </div>
+    
+    <div id="error-message"></div>
+    <div id="result"></div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
