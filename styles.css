@@ -46,7 +46,7 @@ body {
   }
   
   input[type="number"] {
-    max-width: 100px;
+    max-width: 100%;
   }
   
   .button-container {
