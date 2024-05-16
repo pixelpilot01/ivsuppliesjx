@@ -1,4 +1,4 @@
-## Mostly for NEW orders, not refills.
+Mostly for NEW orders, not refills.
 
 ## Calculations
 
