@@ -4,6 +4,9 @@ function calculateSupplies() {
     const iv3Frequency = document.getElementById('iv3-frequency').value;
     const numDays = parseInt(document.getElementById('num-days').value);
     const heparinOrdered = document.getElementById('heparin-ordered').checked;
+
+    // Check if at least one IV medication is being shipped
+    const isIVMedShipped = iv1Frequency !== '' || iv2Frequency !== '' || iv3Frequency !== '';
   
     // Error handling for number of days
     if (isNaN(numDays) || numDays <= 0) {
@@ -98,6 +101,7 @@ function calculateSupplies() {
     const resultContainer = document.getElementById('result');
     resultContainer.innerHTML = `
       <h4 class="result-heading">Supplies</h4>
+      ${isIVMedShipped ? '<p>IV Pump: 1</p>' : ''}
       <p>Primary IV Tubing: ${totalIVTubing}</p>
       <p>Saline Flushes (ml): ${totalSalineFlushes}</p>
       ${heparinOrdered ? `<p>Total Heparin (ml): ${totalHeparin}</p>` : ''}
