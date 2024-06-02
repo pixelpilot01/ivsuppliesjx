@@ -1,0 +1,8 @@
+@media print {
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .result-heading {
+      margin-top: 0;
+    }
+  }
