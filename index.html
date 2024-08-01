@@ -1,58 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 503 - Service Temporarily Unavailable</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #24292e;
-            background-color: #f6f8fa;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            text-align: center;
-            background-color: #fff;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(27,31,35,0.12), 0 1px 2px rgba(27,31,35,0.24);
-            padding: 2rem;
-            max-width: 80%;
-        }
-        h3 {
-            color: #cb2431;
-            font-size: 1.0rem;
-            margin-bottom: 1rem;
-            font-weight: normal;
-        }
-        p {
-            margin-bottom: 1rem;
-        }
-        .error-code {
-            font-family: monospace;
-            background-color: #f6f8fa;
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-        }
-        .github-logo {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 1rem;
-        }
-    </style>
+    <title>IV Supplies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  
 </head>
 <body>
-    <div class="container">
-        <svg class="github-logo" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-        <h3>Error 503 - Service Temporarily Unavailable</h3>
-        <p>Error code: <span class="error-code">GH503-PagesTemporarilyUnavailable</span></p>
-        <p>Please try again later. If the problem persists, contact the site administrator.</p>
+  <div class="container">
+    <h1>*New* IV Order(s) Supplies</h1>
+    
+    <div class="iv-container">
+      <h3>IV med 1</h3>
+      <select id="iv1-frequency">
+        <option value="">Please select frequency</option>
+        <option value="1">Daily</option>
+        <option value="2">Twice Daily</option>
+        <option value="3">3 Times Daily</option>
+        <option value="4">4 Times Daily</option>
+        <option value="6">6 Times Daily</option>
+        <option value="0.5">Daily, Every Other Day</option>
+      </select>
     </div>
+    
+    <div class="iv-container">
+        <h3>IV med 2</h3>
+        <select id="iv2-frequency">
+          <option value="">Please select frequency</option>
+          <option value="1">Daily</option>
+          <option value="2">Twice Daily</option>
+          <option value="3">3 Times Daily</option>
+          <option value="4">4 Times Daily</option>
+          <option value="6">6 Times Daily</option>
+          <option value="0.5">Daily, Every Other Day</option>
+        </select>
+      </div>
+      
+      <div class="iv-container">
+        <h3>IV med 3</h3>
+        <select id="iv3-frequency">
+          <option value="">Please select frequency</option>
+          <option value="1">Daily</option>
+          <option value="2">Twice Daily</option>
+          <option value="3">3 Times Daily</option>
+          <option value="4">4 Times Daily</option>
+          <option value="6">6 Times Daily</option>
+          <option value="0.5">Daily, Every Other Day</option>
+        </select>
+      </div>
+    
+    <div class="input-container">
+      <label for="num-days">Number of Days:</label>
+      <input type="number" id="num-days" min="1" required>
+    </div>
+    
+    <div class="input-container">
+      <label for="heparin-ordered">Heparin Ordered:</label>
+      <input type="checkbox" id="heparin-ordered">
+    </div>
+    
+    <div class="button-container">
+      <button onclick="calculateSupplies()">Calculate Supplies</button>
+      <button onclick="clearFields()">Clear</button>
+      <button onclick="printSupplies()">Print</button>
+    </div>
+    
+    <div id="error-message"></div>
+    <div id="result"></div>
+  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
